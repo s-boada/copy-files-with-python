@@ -2,7 +2,7 @@ import os
 import argparse
 import shutil
 
-def copy_files(files, path = './seleccion', prefix = 'DSC_', extension = '.NEF'):
+def copy_files(files, path = './seleccion', prefix = '', extension = '.NEF'):
     #   Get Directory
     parent_dir = os.path.abspath('.')
     target_dir = os.path.join(parent_dir, path)
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     parser.add_argument("--files", help='List of files to copy', required=True)
     parser.add_argument("--target", help='The relative path to the new location')
     parser.add_argument("--prefix", help='The prefix of the file, in case it is different of DSC_')
-    parser.add_argument("--extension", help='The extension of the file')
+    parser.add_argument("--extension", help='The extension of the file', required=True)
 
     args = parser.parse_args()
 
